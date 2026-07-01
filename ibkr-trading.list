@@ -1,35 +1,33 @@
-# Quantumult X filter rules for IBKR / thinkorswim trading traffic
-# Policy names:
-# - DIRECT: mainland China IBKR domains
-# - TRADING: global IBKR / thinkorswim / Schwab traffic
-#
-# If your Quantumult X policy group uses a different name, replace TRADING
-# with the target policy or policy group name.
+# Quantumult X filter rules for IBKR / thinkorswim direct routing
+# Optimized for mainland China users who want IBKR-related traffic to bypass proxy.
+# All rules intentionally use DIRECT. If a specific host is unreachable directly,
+# override that host in a higher-priority local rule.
 
 # IBKR China
 HOST-SUFFIX,ibkr.com.cn,DIRECT
 HOST-SUFFIX,ibllc.com.cn,DIRECT
 
-# IBKR
-HOST-SUFFIX,ibkr.com,TRADING
-HOST-SUFFIX,ibllc.com,TRADING
-HOST-SUFFIX,ibkr.com.hk,TRADING
-HOST-SUFFIX,ibkr.com.au,TRADING
-HOST-SUFFIX,ibcdn.com,TRADING
-HOST-SUFFIX,iblink.com,TRADING
-HOST-SUFFIX,interactivebrokers.com,TRADING
-HOST-SUFFIX,interactivebrokers.com.hk,TRADING
-HOST-SUFFIX,interactivebrokers.ca,TRADING
-HOST-SUFFIX,interactivebrokers.ie,TRADING
-HOST-SUFFIX,interactivebrokers.co.uk,TRADING
-HOST-SUFFIX,interactivebrokers.co.in,TRADING
-HOST-SUFFIX,interactivebrokers.com.sg,TRADING
-HOST-SUFFIX,interactivebrokers.com.au,TRADING
-HOST-SUFFIX,ndcdyn.interactivebrokers.com,TRADING
-HOST-SUFFIX,cdcdyn.interactivebrokers.com,TRADING
+# IBKR core / CDN / links
+HOST-SUFFIX,ibkr.com,DIRECT
+HOST-SUFFIX,ibllc.com,DIRECT
+HOST-SUFFIX,ibkr.com.hk,DIRECT
+HOST-SUFFIX,ibkr.com.au,DIRECT
+HOST-SUFFIX,ibcdn.com,DIRECT
+HOST-SUFFIX,iblink.com,DIRECT
+
+# Interactive Brokers regional sites and gateways
+HOST-SUFFIX,interactivebrokers.com,DIRECT
+HOST-SUFFIX,interactivebrokers.com.hk,DIRECT
+HOST-SUFFIX,interactivebrokers.com.sg,DIRECT
+HOST-SUFFIX,interactivebrokers.com.au,DIRECT
+HOST-SUFFIX,interactivebrokers.ca,DIRECT
+HOST-SUFFIX,interactivebrokers.ie,DIRECT
+HOST-SUFFIX,interactivebrokers.co.uk,DIRECT
+HOST-SUFFIX,interactivebrokers.co.in,DIRECT
+HOST-SUFFIX,interactivebrokers.co.jp,DIRECT
 
 # thinkorswim / Schwab
-HOST-SUFFIX,thinkorswim.com,TRADING
-HOST-SUFFIX,tdameritrade.com,TRADING
-HOST-SUFFIX,schwab.com,TRADING
-HOST,tosmediaserver.schwab.com,TRADING
+HOST-SUFFIX,thinkorswim.com,DIRECT
+HOST-SUFFIX,tdameritrade.com,DIRECT
+HOST-SUFFIX,schwab.com,DIRECT
+HOST,tosmediaserver.schwab.com,DIRECT
