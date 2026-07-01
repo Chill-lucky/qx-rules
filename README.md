@@ -2,7 +2,7 @@
 
 Quantumult X rule lists.
 
-## IBKR / thinkorswim
+## IBKR / thinkorswim direct routing
 
 Subscription URL:
 
@@ -10,7 +10,8 @@ Subscription URL:
 https://raw.githubusercontent.com/Chill-lucky/qx-rules/main/ibkr-trading.list
 ```
 
-Policy names used by this list:
+This list is optimized for mainland China users who want IBKR / thinkorswim / Schwab related traffic to bypass proxy rules.
 
-- `DIRECT` for mainland China IBKR domains
-- `TRADING` for global IBKR / thinkorswim / Schwab domains
+Policy used by this list:
+
+- `DIRECT`
