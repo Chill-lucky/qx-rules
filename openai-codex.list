@@ -1,4 +1,4 @@
-# Quantumult X filter rules for OpenAI Codex and ChatGPT
+# Quantumult X filter rules for OpenAI Codex, ChatGPT, and Google Gemini
 # Keeps model streaming, secure WebSocket, authentication, static assets,
 # feature configuration, and required shared service traffic on one policy.
 # Policy name: OpenAI
@@ -55,3 +55,18 @@ HOST-SUFFIX,openaicom.imgix.net,OpenAI
 HOST-SUFFIX,chatgpt.livekit.cloud,OpenAI
 HOST-SUFFIX,host.livekit.cloud,OpenAI
 HOST-SUFFIX,turn.livekit.cloud,OpenAI
+
+# Google Gemini
+HOST,ai.google.dev,OpenAI
+HOST,alkalimakersuite-pa.clients6.google.com,OpenAI
+HOST,makersuite.google.com,OpenAI
+HOST-SUFFIX,bard.google.com,OpenAI
+HOST-SUFFIX,deepmind.com,OpenAI
+HOST-SUFFIX,deepmind.google,OpenAI
+HOST-SUFFIX,gemini.google.com,OpenAI
+HOST-SUFFIX,generativeai.google,OpenAI
+HOST-SUFFIX,proactivebackend-pa.googleapis.com,OpenAI
+HOST-SUFFIX,apis.google.com,OpenAI
+HOST-KEYWORD,colab,OpenAI
+HOST-KEYWORD,developerprofiles,OpenAI
+HOST-KEYWORD,generativelanguage,OpenAI
