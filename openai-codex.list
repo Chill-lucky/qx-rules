@@ -1,0 +1,37 @@
+# Quantumult X filter rules for OpenAI Codex and ChatGPT
+# Keeps model streaming, secure WebSocket, authentication, static assets,
+# feature configuration, and required shared service traffic on one policy.
+# Policy name: OpenAI
+# Source: https://help.openai.com/en/articles/9247338
+# Updated: 2026-07-13
+
+# OpenAI core, authentication, mobile/desktop clients, and Codex WebSocket
+HOST-SUFFIX,openai.com,OpenAI
+HOST-SUFFIX,chatgpt.com,OpenAI
+
+# OpenAI static assets, uploads, and feature configuration
+HOST-SUFFIX,oaistatic.com,OpenAI
+HOST-SUFFIX,oaiusercontent.com,OpenAI
+HOST-SUFFIX,oaistatsig.com,OpenAI
+HOST-SUFFIX,featuregates.org,OpenAI
+HOST-SUFFIX,statsig.com,OpenAI
+HOST-SUFFIX,statsigapi.net,OpenAI
+
+# OpenAI setup and authentication dependencies
+HOST,cdn.openaimerge.com,OpenAI
+HOST,cdn.workos.com,OpenAI
+HOST,forwarder.workos.com,OpenAI
+HOST,setup.workos.com,OpenAI
+HOST,images.workoscdn.com,OpenAI
+HOST,workos.imgix.net,OpenAI
+HOST,challenges.cloudflare.com,OpenAI
+
+# Diagnostics, support, payments, email links, and Apple client support
+HOST,rum.browser-intake-datadoghq.com,OpenAI
+HOST,o207216.ingest.sentry.io,OpenAI
+HOST,o33249.ingest.sentry.io,OpenAI
+HOST,js.stripe.com,OpenAI
+HOST,humb.apple.com,OpenAI
+HOST-SUFFIX,ct.sendgrid.net,OpenAI
+HOST-SUFFIX,intercom.io,OpenAI
+HOST-SUFFIX,intercomcdn.com,OpenAI
