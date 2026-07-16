@@ -1,72 +1,55 @@
-# Quantumult X filter rules for OpenAI Codex, ChatGPT, and Google Gemini
-# Keeps model streaming, secure WebSocket, authentication, static assets,
-# feature configuration, and required shared service traffic on one policy.
-# Policy name: OpenAI
-# Source: https://help.openai.com/en/articles/9247338
-# Updated: 2026-07-13
+# Quantumult X filter rules for mainstream AI platforms
+# Platforms: OpenAI/ChatGPT/Codex, Anthropic Claude, Google Gemini, Perplexity
+# Policy: AI
+# OpenAI source: https://help.openai.com/en/articles/9247338
+# Claude sources: https://support.claude.com/en/articles/13198485 and https://docs.anthropic.com/en/docs/claude-code/corporate-proxy
+# Gemini source: https://ai.google.dev/gemini-api/docs/openai
+# Perplexity source: https://docs.perplexity.ai/docs/getting-started/quickstart
+# Updated: 2026-07-16
 
-# OpenAI core, authentication, mobile/desktop clients, and Codex WebSocket
-HOST-SUFFIX,openai.com,OpenAI
-HOST-SUFFIX,chatgpt.com,OpenAI
+# OpenAI / ChatGPT / Codex
+# Broad product suffixes cover authentication, desktop/mobile clients,
+# uploads, static assets, and the secure WebSocket endpoints used by Codex.
+HOST-SUFFIX,openai.com,AI
+HOST-SUFFIX,chatgpt.com,AI
+HOST-SUFFIX,oaistatic.com,AI
+HOST-SUFFIX,oaiusercontent.com,AI
+HOST-SUFFIX,oaistatsig.com,AI
+HOST,cdn.openaimerge.com,AI
+HOST,cdn.workos.com,AI
+HOST,forwarder.workos.com,AI
+HOST,setup.workos.com,AI
+HOST,images.workoscdn.com,AI
+HOST,workos.imgix.net,AI
+HOST,challenges.cloudflare.com,AI
+HOST,rum.browser-intake-datadoghq.com,AI
+HOST,o207216.ingest.sentry.io,AI
+HOST,o33249.ingest.sentry.io,AI
+HOST,js.stripe.com,AI
+HOST,humb.apple.com,AI
+HOST-SUFFIX,ct.sendgrid.net,AI
+HOST-SUFFIX,intercom.io,AI
+HOST-SUFFIX,intercomcdn.com,AI
 
-# OpenAI static assets, uploads, and feature configuration
-HOST-SUFFIX,oaistatic.com,OpenAI
-HOST-SUFFIX,oaiusercontent.com,OpenAI
-HOST-SUFFIX,oaistatsig.com,OpenAI
-HOST-SUFFIX,featuregates.org,OpenAI
-HOST-SUFFIX,featureassets.org,OpenAI
-HOST-SUFFIX,prodregistryv2.org,OpenAI
-HOST-SUFFIX,statsig.com,OpenAI
-HOST-SUFFIX,statsigapi.net,OpenAI
+# Anthropic Claude / Claude Code / Claude apps
+HOST-SUFFIX,claude.ai,AI
+HOST-SUFFIX,claude.com,AI
+HOST-SUFFIX,anthropic.com,AI
 
-# OpenAI setup and authentication dependencies
-HOST,cdn.openaimerge.com,OpenAI
-HOST,cdn.workos.com,OpenAI
-HOST,forwarder.workos.com,OpenAI
-HOST,setup.workos.com,OpenAI
-HOST,images.workoscdn.com,OpenAI
-HOST,workos.imgix.net,OpenAI
-HOST,challenges.cloudflare.com,OpenAI
+# Google Gemini / Google AI Studio / Gemini API
+# Keep Google-wide authentication and assets on the normal Google policy;
+# only Gemini-specific hosts are pinned to the AI exit.
+HOST,gemini.google.com,AI
+HOST,aistudio.google.com,AI
+HOST,ai.google.dev,AI
+HOST,generativelanguage.googleapis.com,AI
+HOST,proactivebackend-pa.googleapis.com,AI
+HOST,alkalimakersuite-pa.clients6.google.com,AI
+HOST-SUFFIX,ai.studio,AI
+HOST,bard.google.com,AI
+HOST,makersuite.google.com,AI
 
-# Diagnostics, support, payments, email links, and Apple client support
-HOST,rum.browser-intake-datadoghq.com,OpenAI
-HOST,o207216.ingest.sentry.io,OpenAI
-HOST,o33249.ingest.sentry.io,OpenAI
-HOST,js.stripe.com,OpenAI
-HOST,humb.apple.com,OpenAI
-HOST-SUFFIX,ct.sendgrid.net,OpenAI
-HOST-SUFFIX,intercom.io,OpenAI
-HOST-SUFFIX,intercomcdn.com,OpenAI
-
-# Dedicated OpenAI legacy, CAPTCHA, CDN, and asset compatibility
-HOST,browser-intake-datadoghq.com,OpenAI
-HOST,chat.openai.com.cdn.cloudflare.net,OpenAI
-HOST,openai-api.arkoselabs.com,OpenAI
-HOST,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,OpenAI
-HOST,openaicomproductionae4b.blob.core.windows.net,OpenAI
-HOST,production-openaicom-storage.azureedge.net,OpenAI
-HOST,static.cloudflareinsights.com,OpenAI
-HOST-SUFFIX,ai.com,OpenAI
-HOST-SUFFIX,client-api.arkoselabs.com,OpenAI
-HOST-SUFFIX,openaiapi-site.azureedge.net,OpenAI
-HOST-SUFFIX,openaicom.imgix.net,OpenAI
-
-# ChatGPT voice compatibility
-HOST-SUFFIX,chatgpt.livekit.cloud,OpenAI
-HOST-SUFFIX,host.livekit.cloud,OpenAI
-HOST-SUFFIX,turn.livekit.cloud,OpenAI
-
-# Google Gemini
-HOST,ai.google.dev,OpenAI
-HOST,alkalimakersuite-pa.clients6.google.com,OpenAI
-HOST,makersuite.google.com,OpenAI
-HOST-SUFFIX,bard.google.com,OpenAI
-HOST-SUFFIX,deepmind.com,OpenAI
-HOST-SUFFIX,deepmind.google,OpenAI
-HOST-SUFFIX,gemini.google.com,OpenAI
-HOST-SUFFIX,generativeai.google,OpenAI
-HOST-SUFFIX,proactivebackend-pa.googleapis.com,OpenAI
-HOST-SUFFIX,apis.google.com,OpenAI
-HOST-KEYWORD,colab,OpenAI
-HOST-KEYWORD,developerprofiles,OpenAI
-HOST-KEYWORD,generativelanguage,OpenAI
+# Perplexity web, API, console, and official short links
+HOST-SUFFIX,perplexity.ai,AI
+HOST-SUFFIX,perplexity.com,AI
+HOST-SUFFIX,pplx.ai,AI
