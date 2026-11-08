@@ -1,0 +1,15 @@
+# Quantumult X filter rules for Hongguo Short Drama ad blocking
+# App: com.phoenix.video
+# Sources:
+# - https://github.com/LOWERTOP/Test/blob/master/Cleaner.module
+# - https://github.com/217heidai/adblockfilters/blob/main/rules/adblockqxlite.conf
+# Updated: 2026-08-17
+
+# Keep this exception above the wildcard rejection rule.
+HOST,p3-ad-sign.byteimg.com,DIRECT
+
+# Hongguo / related ByteDance reading ad resources
+HOST-WILDCARD,*-misc-lq.fqnovel.com,REJECT
+HOST-WILDCARD,*-reading-ad.qznovelvod.com,REJECT
+HOST-WILDCARD,*-ad-sign.byteimg.com,REJECT
+HOST-WILDCARD,*-iosreadingvideo.qznovelvod.com,REJECT

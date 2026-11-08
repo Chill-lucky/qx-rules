@@ -2,6 +2,29 @@
 
 Quantumult X rule lists.
 
+## Hongguo Short Drama ad blocking
+
+Subscription URL:
+
+```text
+https://raw.githubusercontent.com/Chill-lucky/qx-rules/main/hongguo-adblock.list
+```
+
+Recommended Quantumult X `[filter_remote]` entry:
+
+```text
+https://raw.githubusercontent.com/Chill-lucky/qx-rules/main/hongguo-adblock.list, tag=Hongguo AdBlock, update-interval=86400, opt-parser=true, enabled=true
+```
+
+Do not set `force-policy` for this list because it contains both a required
+`DIRECT` exception and `REJECT` rules. It targets Hongguo ad resource hosts
+without rejecting the entire `qznovelvod.com` domain used by normal playback.
+
+Policies used by this list:
+
+- `DIRECT`
+- `REJECT`
+
 ## IBKR / thinkorswim direct routing
 
 Subscription URL:
