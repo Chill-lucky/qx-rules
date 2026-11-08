@@ -47,3 +47,27 @@ removing the old entries.
 Policy used by this list:
 
 - `OpenAI`
+
+## xAI / Grok proxy routing
+
+Subscription URL:
+
+```text
+https://raw.githubusercontent.com/Chill-lucky/qx-rules/main/grok.list
+```
+
+Recommended Quantumult X `[filter_remote]` entry:
+
+```text
+https://raw.githubusercontent.com/Chill-lucky/qx-rules/main/grok.list, tag=Grok, force-policy=Grok, update-interval=86400, opt-parser=true, enabled=true
+```
+
+This list routes Grok / xAI product hosts through a dedicated `Grok` policy.
+If Grok should share an existing AI or OpenAI policy group, change
+`force-policy=Grok` to that policy name.
+It does not include x.com or twitter.com, so general X/Twitter traffic stays
+on its existing policy.
+
+Policy used by this list:
+
+- `Grok`
