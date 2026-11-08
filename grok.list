@@ -1,0 +1,14 @@
+# Quantumult X filter rules for xAI / Grok
+# Policy: Grok
+# Intentionally excludes general X/Twitter traffic (x.com, twitter.com, twimg.com, t.co).
+# Updated: 2026-11-08
+
+# xAI / Grok
+# HOST-SUFFIX,x.ai covers api, accounts, console, docs, grok, and status subdomains.
+# HOST-SUFFIX,grok.x.com matches grok.x.com and its subdomains only.
+HOST-SUFFIX,x.ai,Grok
+HOST-SUFFIX,grok.com,Grok
+HOST-SUFFIX,grok.x.com,Grok
+HOST-SUFFIX,grokipedia.com,Grok
+HOST-SUFFIX,grokusercontent.com,Grok
+HOST-SUFFIX,grokcli.io,Grok
